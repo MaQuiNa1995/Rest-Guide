@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.github.maquina1995.rest.dto.ExampleDto;
+
 /**
  * Se han omitido los {@link ResponseEntity} para mayor comodidad
  * 
@@ -104,7 +106,7 @@ public class RequestController {
 	 * 
 	 * @see Homólogo: {@link PathController#many(String)}
 	 */
-	@RequestMapping(value = "/many")
+	@GetMapping(value = "/many")
 	public String many(@RequestParam Map<String, String> pathVariables) {
 
 		// En la key del mapa vendrán los nombres de la variables
@@ -126,6 +128,22 @@ public class RequestController {
 			response = response + " y tienes: " + age;
 		}
 		return response;
+	}
+
+	/**
+	 * Adicionalmente podemos crear un dto para conglomerar mas de 1 parámetro en un
+	 * objeto y hacer que los campos del mismo sean parte de la url como
+	 * requestParams
+	 * <p>
+	 * para este fin en el argumento del controller se le debe pasar un Dto en este
+	 * caso {@link ExampleDto}
+	 * 
+	 * @see {@link BodyController#body(ExampleDto)}
+	 * 
+	 */
+	@GetMapping("/many2")
+	public String many2(ExampleDto dto) {
+		return "Nombre: " + dto.getName() + " Surname " + dto.getSurname();
 	}
 
 }

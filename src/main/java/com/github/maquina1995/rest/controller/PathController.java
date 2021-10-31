@@ -94,7 +94,7 @@ public class PathController {
 	 * @since Spring 3.2
 	 * @see Homólogo: {@link RequestController#many(String)}
 	 */
-	@RequestMapping(value = { "/many", "/many/{name}/{ageBorn}" })
+	@GetMapping(value = { "/many", "/many/{name}/{ageBorn}" })
 	public String many(@PathVariable Map<String, String> pathVariables) {
 
 		// En la key del mapa vendrán los nombres de la variables
