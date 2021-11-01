@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.github.maquina1995.rest.configuration.BindingControllerAdvice;
 import com.github.maquina1995.rest.dto.ExampleDto;
 
 /**
@@ -99,7 +100,7 @@ public class RequestController {
 	 * Otra forma de hacer parámetros opcionales es usar un mapa aunque tambien nos
 	 * sirve para agrupar en un mapa muchos parámetros
 	 * 
-	 * <li>http://localhost:8080/requestparam/many3?name=MaQuiNa</li>
+	 * <li>http://localhost:8080/requestparam/many3?name=MaQuiNa&bornAge=1995</li>
 	 * <li>http://localhost:8080/requestparam/many3</li>
 	 * 
 	 * @since Spring 3.2
@@ -121,10 +122,10 @@ public class RequestController {
 
 		// Como dijimos antes al recoger el valor del path se cogen como String por lo
 		// tanto si queremos usar números por ejemplo nos tocará hacer un parse
-		String ageBorn = pathVariables.get("ageBorn");
-		if (ageBorn != null) {
+		String bornAge = pathVariables.get("bornAge");
+		if (bornAge != null) {
 			int age = LocalDate.now()
-			        .getYear() - Integer.valueOf(ageBorn);
+			        .getYear() - Integer.valueOf(bornAge);
 			response = response + " y tienes: " + age;
 		}
 		return response;
@@ -137,9 +138,15 @@ public class RequestController {
 	 * <p>
 	 * para este fin en el argumento del controller se le debe pasar un Dto en este
 	 * caso {@link ExampleDto}
+	 * <p>
+	 * Si tu Dto es inmutable, debes añadir la configuración para spring pueda saber
+	 * como agregar los valores al mismo
+	 * {@link BindingControllerAdvice#initBinder(org.springframework.web.bind.WebDataBinder)}
+	 * <p>
+	 * Tienes un ejemplo de Dto inmutable: {@link ExampleDto}
+	 * <p>
 	 * 
 	 * @see {@link BodyController#body(ExampleDto)}
-	 * 
 	 */
 	@GetMapping("/many2")
 	public String many2(ExampleDto dto) {

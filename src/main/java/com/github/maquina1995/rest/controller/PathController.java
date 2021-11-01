@@ -90,11 +90,14 @@ public class PathController {
 	/**
 	 * Otra forma de hacer parámetros opcionales es usar un mapa aunque tambien nos
 	 * sirve para agrupar en un mapa muchos parámetros
+	 * <p>
+	 * <li>http://localhost:8080/requestparam/many3/MaQuiNa/1995</li>
+	 * <li>http://localhost:8080/requestparam/many3</li>
 	 * 
 	 * @since Spring 3.2
 	 * @see Homólogo: {@link RequestController#many(String)}
 	 */
-	@GetMapping(value = { "/many", "/many/{name}/{ageBorn}" })
+	@GetMapping(value = { "/many", "/many/{name}/{bornAge}" })
 	public String many(@PathVariable Map<String, String> pathVariables) {
 
 		// En la key del mapa vendrán los nombres de la variables
@@ -110,10 +113,10 @@ public class PathController {
 
 		// Como dijimos antes al recoger el valor del path se cogen como String por lo
 		// tanto si queremos usar números por ejemplo nos tocará hacer un parse
-		String ageBorn = pathVariables.get("ageBorn");
-		if (ageBorn != null) {
+		String bornAge = pathVariables.get("bornAge");
+		if (bornAge != null) {
 			int age = LocalDate.now()
-			        .getYear() - Integer.valueOf(ageBorn);
+			        .getYear() - Integer.valueOf(bornAge);
 			response = response + " y tienes: " + age;
 		}
 		return response;
