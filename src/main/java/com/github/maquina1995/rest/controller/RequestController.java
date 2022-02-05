@@ -100,8 +100,8 @@ public class RequestController {
 	 * Otra forma de hacer parámetros opcionales es usar un mapa aunque tambien nos
 	 * sirve para agrupar en un mapa muchos parámetros
 	 * 
-	 * <li>http://localhost:8080/requestparam/many3?name=MaQuiNa&bornAge=1995</li>
-	 * <li>http://localhost:8080/requestparam/many3</li>
+	 * <li>http://localhost:8080/requestparam/many?name=MaQuiNa&bornAge=1995</li>
+	 * <li>http://localhost:8080/requestparam/many</li>
 	 * 
 	 * @since Spring 3.2
 	 * 
