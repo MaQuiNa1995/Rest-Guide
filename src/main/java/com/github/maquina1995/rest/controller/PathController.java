@@ -56,8 +56,8 @@ public class PathController {
 	 * <code>required = false</code> a la anotación de tal manera que tendremos 2
 	 * paths para el mismo endpoint uno con parámetro y otro sin
 	 * 
-	 * <li>http://localhost:8080/pathparam/optional/MaQuiNa</li>
-	 * <li>http://localhost:8080/pathparam/optional</li>
+	 * <li>http://localhost:8080/pathvariable/optional/MaQuiNa</li>
+	 * <li>http://localhost:8080/pathvariable/optional</li>
 	 * <p>
 	 * 
 	 * Cuando usemos el required false debemos tener cuidado con el tema de
@@ -77,8 +77,8 @@ public class PathController {
 	 * Adicionalmente a lo del required podemos usar el parámetro {@link Optional}
 	 * para hacer de un parámetro opcional
 	 * 
-	 * <li>http://localhost:8080/requestparam/optional2/MaQuiNa</li>
-	 * <li>http://localhost:8080/requestparam/optional2</li>
+	 * <li>http://localhost:8080/pathvariable/optional2/MaQuiNa</li>
+	 * <li>http://localhost:8080/pathvariable/optional2</li>
 	 * 
 	 * @since Jdk 8 y Spring 4.1
 	 */
@@ -91,8 +91,8 @@ public class PathController {
 	 * Otra forma de hacer parámetros opcionales es usar un mapa aunque tambien nos
 	 * sirve para agrupar en un mapa muchos parámetros
 	 * <p>
-	 * <li>http://localhost:8080/requestparam/many3/MaQuiNa/1995</li>
-	 * <li>http://localhost:8080/requestparam/many3</li>
+	 * <li>http://localhost:8080/pathvariable/many3/MaQuiNa/1995</li>
+	 * <li>http://localhost:8080/pathvariable/many3</li>
 	 * 
 	 * @since Spring 3.2
 	 * @see Homólogo: {@link RequestController#many(String)}
