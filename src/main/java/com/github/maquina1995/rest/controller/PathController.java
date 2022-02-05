@@ -91,8 +91,8 @@ public class PathController {
 	 * Otra forma de hacer parámetros opcionales es usar un mapa aunque tambien nos
 	 * sirve para agrupar en un mapa muchos parámetros
 	 * <p>
-	 * <li>http://localhost:8080/pathvariable/many3/MaQuiNa/1995</li>
-	 * <li>http://localhost:8080/pathvariable/many3</li>
+	 * <li>http://localhost:8080/pathvariable/many/MaQuiNa/1995</li>
+	 * <li>http://localhost:8080/pathvariable/many</li>
 	 * 
 	 * @since Spring 3.2
 	 * @see Homólogo: {@link RequestController#many(String)}
