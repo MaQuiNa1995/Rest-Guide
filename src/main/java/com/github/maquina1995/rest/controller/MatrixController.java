@@ -14,8 +14,8 @@ public class MatrixController {
 	 * valor en nuestras url, podemos pasar de 1 a N argumentos separados por
 	 * <code>;</code> como los ejemplos de acontinuación:
 	 * <p>
-	 * <li>http://localhost:8080/pathvariable/matrix/matrix=1</li>
-	 * <li>http://localhost:8080/pathvariable/matrix/matrix=1;matrix=2</li>
+	 * <li>http://localhost:8080/matrix/matrix=1</li>
+	 * <li>http://localhost:8080/matrix/matrix=1;matrix=2</li>
 	 * <p>
 	 * Para poder usar esta forma de pasar argumentos a la url debemos deshabilitar
 	 * el reemplazo automático de los <code>;</code>
