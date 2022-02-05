@@ -38,7 +38,7 @@ public class PathController {
 	 * <code>@PathVariable(name = "nombreUrl")</code>
 	 * <p>
 	 * Al contrario que requestparam aqui al pasar la siguiente petición:
-	 * http://localhost:8080/pathparam/simple?name=MaQuiNa+1995 el <code>+</code> no
+	 * http://localhost:8080/pathvariable/simple/MaQuiNa+1995 el <code>+</code> no
 	 * sería codificado y se cogería la string literal es decir que daria como
 	 * resultado: MaQuiNa+1995
 	 * 
